@@ -1,6 +1,6 @@
 # PCDN Filter List
 # 合并自多个来源
-# 更新时间: 2025-10-20 14:31:14
+# 更新时间: 2025-10-21 03:10:55
 # 来源:
 # - https://github.com/Womsxd/MyAdBlockRules
 # - https://github.com/4fuu/AdGuard-Home-PCDN
@@ -252,7 +252,6 @@
 ||p2p-lf.hotsoon.snssdk.com^
 ||p2p-lf.pstatp.com^
 ||p2p-lf.douyincdn.com^
-
 ! 拦截一些p2pcdn的相关规则
 ! 主要是防止自己成为p2p cdn的节点为主
 ! 腾讯
@@ -310,7 +309,6 @@
 ||*-p2p-*.chat.bilibili.com^
 !金山云
 ||*.stun.yfp2p.net^
-
 # China PCDN 域名列表
 # 斗鱼
 ||stun.douyucdn.cn^
@@ -350,7 +348,6 @@
 ||kuiniuca.com^
 ||onethingpcs.com^
 ||jomodns.cn^
-
 # Block_PCDN_Domain
 ||p2p.huya.com^
 ||stun.douyucdn.cn
@@ -367,7 +364,6 @@
 # Star me: https://github.com/743859910/OpenHosts
 # Update url: https://raw.githubusercontent.com/743859910/OpenHosts/master/Block_PCDN_Domain.txt
 # Block_PCDN_Domain End
-
 # Merged and deduplicated AdGuard Home filter rules
 # From SophiEZzz and anti-AD
 ||p2p-ali.douyucdn.cn^
