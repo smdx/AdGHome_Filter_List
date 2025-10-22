@@ -26,24 +26,13 @@
 @@||elemcdn.com^
 @@||alipayobjects.com^
 @@||jianshu.com^
-#||ctobsnssdk.com^
-#||pangolin.snssdk.com^
-#||pangolin-sdk-toutiao.com^
-#||pangolin-sdk-toutiao-b.com^
-#||pglstatp-toutiao.com^
-#||dm.toutiao.com^
-#||ulogs.umeng.com^
-#||aaid.umeng.com^
-#||tnc*.zijieapi.com^
-#||mssdk-bu.bytedance.com^
-||api2.coolapk.com/v6/feed/detail$replace=/"include_goods_ids":\[.*?]\,"include_goods":\[.*?]\,/ /
-||api2.coolapk.com/v6/feed/detail$replace=/\,"detailSponsorCard":{.*}/}}/
-# csdn广告
-||lupic.cdn.bcebos.com^
-# 简书广告
-||pp.chuzushijian.cn^
-||cdn-file-ssl-wan.ludashi.com^
-||cdn-file-ssl-wan.ludashi.com/wan/newswf/dlgglm^$important
+# 字节跳动x抖音直播 CDN 域名白名单 (通配符版)
+#@@||pull-tsl-*.douyincdn.com^
+#@@||pull-flv-*.douyincdn.com^
+@@||pull-*.douyincdn.com^
+@@||push-*.douyincdn.com^
+@@||pull-tsl-*.douyinliving.com^
+@@||www.chengzijianzhan.cc^
 # 解除张大妈
 @@||smzdm.com^
 @@||zdmimg.com^
@@ -156,14 +145,6 @@
 @@||www.mydrivers.com^$important
 @@||upos-*-*.bilivideo.com^$important
 @@||volcengine-cache-weboffice.wpscdn.cn^$important
-# 抖音直播 CDN 域名白名单 (通配符版)
-#@@||pull-tsl-*.douyincdn.com^
-#@@||pull-flv-*.douyincdn.com^
-@@||pull-*.douyincdn.com^
-@@||push-*.douyincdn.com^
-@@||pull-tsl-*.douyinliving.com^
-@@||www.chengzijianzhan.cc^$client='240e:3b2:a0c:3f50:b489:8507:9a06:496'
-@@||dns.weixin.qq.com.cn^$client='10.0.0.70'
 # 短剧
 @@||*-video.qznovelvod.com^$important
 @@||pull-*.huoshanlive.com^$important
