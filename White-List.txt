@@ -1,10 +1,224 @@
+# JD
+@@||jd.com^$important
+@@||img*.360buyimg.com
+@@||m.jd.com^
+@@||item.jd.com^
+@@||cart.jd.com^
+@@||pay.jd.com^
+@@||logistics.jd.com^
+@@||*vod.300hu.com^$important
+@@||jdpay.com
+# Alibaba
+@@||aliyuncs.com^
+@@||taobao.com
 @@||alipay.com^
+@@||lxcdn.dl.files.xiaomi.net^$important
+||u3.ucweb.com^
+@@||ip.taobao.com^$important
+@@||adashbc.ut.taobao.com^$important
+@@||s.click.tmall.com^$important
+@@||s.click.taobao.com^$important
+@@||clientlog3.music.163.com^$important
+@@||app-monitor.ele.me^$important
+@@||mon.snssdk.com^$important
+@@||datacollector-drcn.dt.hicloud.com^$important
+@@||ele.me^
+@@||elemcdn.com^
+@@||alipayobjects.com^
+@@||jianshu.com^
+#||ctobsnssdk.com^
+#||pangolin.snssdk.com^
+#||pangolin-sdk-toutiao.com^
+#||pangolin-sdk-toutiao-b.com^
+#||pglstatp-toutiao.com^
+#||dm.toutiao.com^
+#||ulogs.umeng.com^
+#||aaid.umeng.com^
+#||tnc*.zijieapi.com^
+#||mssdk-bu.bytedance.com^
+||api2.coolapk.com/v6/feed/detail$replace=/"include_goods_ids":\[.*?]\,"include_goods":\[.*?]\,/ /
+||api2.coolapk.com/v6/feed/detail$replace=/\,"detailSponsorCard":{.*}/}}/
+# csdn广告
+||lupic.cdn.bcebos.com^
+# 简书广告
+||pp.chuzushijian.cn^
+||cdn-file-ssl-wan.ludashi.com^
+||cdn-file-ssl-wan.ludashi.com/wan/newswf/dlgglm^$important
+# 解除张大妈
+@@||smzdm.com^
+@@||zdmimg.com^
+# 贴吧
+## tieba-ares.cdn.bcebos.com/mis/2023-5/1683789351139/ac0b4431fb1b.gif
+||tieba-ares.cdn.bcebos.com/mis^$important
+||tieba-ares.cdn.bcebos.com^$important
+# 解除夸克
+@@||myquark.cn^
+@@||quark.cn^
+#
+@@||netease.com^
+# 酷安_测试faild
+#||tr.byteurl.cn^$important
+#||pull-flv-f29.douyincdn.com^$important
+#||pull-hls-vr-l11.douyincdn.com^$important
+#||frontier100-toutiao.toutiaoapi.com^$important
+#||p3-shortvideo-sign.toutiaoimg.com^$important
+#||niu-agjsnj.snssdk.com^$important
+#||mssdk3-normal-lf.zijieapi.com^$important
+# 酷安+番茄
+||pangolin-sdk-toutiao.com^
+||zijieapi.com^$app=com.dragon.read
+||frontier-toutiao.snssdk.com^$app=com.dragon.read
+||pangolin-sdk-toutiao-b.com^
+||ads5-normal-lf.zijieapi.com^$app=com.dragon.read
+||pglstatp-toutiao.com^
+# 解除CSDN
+#@@||blog.csdn.net
+# 解除哔哩哔哩
+@@||bilibili.com^
+@@||dataflow.biliapi.com^$important
 @@||mall.bilibili.com^
 @@||passport.bilibili.com^
 @@||club.bilibili.com^
 @@||api.live.bilibili.com^
 @@||api.vc.bilibili.com^
 @@||upos-sz-mirrorcos.bilivideo.com^
+||*pcdn*.biliapi.net^$important
+||mcdn.bilivideo.com^$important
+||mcdn.bilivideo.cn^$important
+||szbdyd.com^$important
+#||cn-*.bilivideo.com
+# 同花顺看点
+@@||10jqka.com.cn^$important
+#@@||mo.baidu.com^$important
+# 王者
+@@||ap6.ssl.msdk.qq.com^$important
+@@||szlong.weixin.qq.com^$important
+# 快手?
+@@||kuaishou.httpdns.pro^$important
+@@||mime.baidu.com^$important
+#||astrill4u.com^$client='103.98.17.11'
+#||astrill4u.com^$important
+@@||dc.sigmob.cn^$important
+# Copilot
+@@||githubusercontent.com^$important
+@@||github.com^$important
+# 阻止扫描
+||astrill4u.com^$important
+#@@||qq.com^$important
+@@||3g.qq.com^$important
+@@||public.gdtimg.com^$important
+# 小米系列
+# 小米监听
+@@||talk.bz.gepush.com^$important
+@@||talk.bz.getui.net^$important
+# 小米APP安装验证
+@@||api.installer.xiaomi.com^$important
+# shoppy
+@@||shoppy.gg^$important
+# 腾讯系
+@@||qpic.cn^$important
+#@@||qq.com^$important
+@@||weixin.qq.com^
+@@||mp.weixin.qq.com^
+@@||dns.weixin.qq.com.cn^$important
+@@||img*.qq.com^$image,video@@||short.weixin.qq.com^$important
+@@||v.qq.com^$video@@||voip.weixin.qq.com^$important
+@@||game.qq.com^@@||long.weixin.qq.com^$important
+@@||*-download.ftn.qq.com^$important
+@@||img*.gtimg.com^$image,video
+@@||pay.weixin.qq.com^
+!! 腾讯视频TV 相关
+@@||tv.aiseet.atianqi.com^$important
+@@||*.play.aiseet.atianqi.com
+# QQ快捷登录
+@@||aegis.qq.com^$important
+@@||*.sec.qq.com^$important
+@@||*.ptlogin2.qq.com^$important
+@@||oth.eve.mdt.qq.com^$important
+@@||tpstelemetry.tencent.com^$important
+# 百度系
+@@||m.baidu.com^
+@@||tieba.baidu.com^
+@@||news.baidu.com^
+@@||map.baidu.com^
+@@||img*.bdimg.com^$image
+@@||cdn*.baidu.com^$image,video
+@@||passport.baidu.com^
+@@||pay.baidu.com^
+@@||t9.baidu.com^$important
+@@||b.bdstatic.com^$important
+@@||t7.baidu.com^$important
+@@||sofire.baidu.com^$important
+@@||t8.baidu.com^$important
+@@||smartop-sdkapi.jiguang.cn^$important
+@@||icons.mydrivers.com^$important
+@@||bbs.pcbeta.com^
+@@||www.mydrivers.com^$important
+@@||upos-*-*.bilivideo.com^$important
+@@||volcengine-cache-weboffice.wpscdn.cn^$important
+# 抖音直播 CDN 域名白名单 (通配符版)
+#@@||pull-tsl-*.douyincdn.com^
+#@@||pull-flv-*.douyincdn.com^
+@@||pull-*.douyincdn.com^
+@@||push-*.douyincdn.com^
+@@||pull-tsl-*.douyinliving.com^
+@@||www.chengzijianzhan.cc^$client='240e:3b2:a0c:3f50:b489:8507:9a06:496'
+@@||dns.weixin.qq.com.cn^$client='10.0.0.70'
+# 短剧
+@@||*-video.qznovelvod.com^$important
+@@||pull-*.huoshanlive.com^$important
+# [迅雷PCDN][Tracker]
+||00cdn.com^$important
+||88cdn.com^$important
+@@||i.xunlei.com^$important
+@@||x.xunlei.com^$important
+@@||*-ssl.xunlei.com^$important
+@@||*.vip.xunlei.com^$important
+@@||api-pan.xunlei.com^$important
+@@||login*.xunlei.com^$important
+@@||pcdownsdk.rcv.sandai.net^$important
+@@||analysis-acc-ssl.xunlei.com^$important
+@@||team-speed-cdn-vip.xunlei.com^$important
+@@||ali-pc-x-speed-auth-vip.xunlei.com^$important
+# 美团
+@@||analytics.meituan.net^$important
+@@||analytics.meituan.net.lan^$important
+@@||liteappcdn.wechatpay.cn^$important
+@@||*.dreport.meituan.net^$important
+@@||httpdns.meituan.com^$important
+# 金山网盘
+@@||docer-files.wpscdn.cn^$important
+@@||dw-online.ksosoft.com^$important
+@@||kdocs-om.wpscdn.cn^$important
+@@||weboffice.ks3-cn-beijing.wpscdn.cn^$important
+# 小红书
+@@||flash.xiaohongshu.com^$important
+@@||store.xiaohongshu.com^$important
+#  Samsung Server
+@@||*.dlied1.cdntips.net^$important
+# 中关村
+@@||jd.zol.com.cn^$important
+@@||*.zol-img.com.cn^$important
+# etsy
+@@||i.etsystatic.com^$important
+# ebay
+@@||i.ebayimg.com^$important
+# Apple Shop
+@@||*.itunes.apple.com^$important
+# Flaticon图标网站
+@@||*.flaticon.com^$important
+@@||static.cloudflareinsights.com^$client='10.0.0.2'
+# makerworld 3D模型
+@@||makerworld.com^$important
+@@||aps.amap.com^$important
+# BT-Tracker Server
+@@||*tracker*.*^$important
+# MyDrivers
+@@||*.mydrivers.com^$important
+# Pinterest
+@@||v1.pinimg.com^$important
+@@||i.pinimg.com^$important
+## 其他
 @@||x.com^
 @@||twitter.com^
 @@||twimg.com^$image,video
@@ -25,29 +239,6 @@
 @@||t.cn^
 @@||f.video.weibocdn.com^
 @@||ww4.sinaimg.cn^
-@@||m.baidu.com^
-@@||tieba.baidu.com^
-@@||news.baidu.com^
-@@||map.baidu.com^
-@@||img*.bdimg.com^$image
-@@||cdn*.baidu.com^$image,video
-@@||passport.baidu.com^
-@@||pay.baidu.com^
-@@||weixin.qq.com^
-@@||mp.weixin.qq.com^
-@@||img*.qq.com^$image,video
-@@||img*.gtimg.com^$image,video
-@@||pay.weixin.qq.com^
-@@||v.qq.com^$video
-@@||game.qq.com^
-@@||img*.360buyimg.com
-@@||jd.com^
-@@||www.jd.com^
-@@||m.jd.com^
-@@||item.jd.com^
-@@||cart.jd.com^
-@@||pay.jd.com^
-@@||logistics.jd.com^
 @@||instagram.com^
 @@||*.cdninstagram.com^$image,video
 @@||scontent*.instagram.com^$image,video
