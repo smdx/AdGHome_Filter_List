@@ -2,7 +2,7 @@ name: Update PCDN Filter List
 
 on:
   schedule:
-    # 每天UTC时间2:00运行（北京时间10:00）
+    # 周五UTC时间0:00运行（北京时间8:00）
     - cron: '0 0 * * 5'
   workflow_dispatch: # 允许手动触发
   push:
