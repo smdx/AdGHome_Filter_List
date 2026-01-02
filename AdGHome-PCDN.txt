@@ -1,6 +1,6 @@
 # PCDN Filter List
 # 合并自多个来源
-# 更新时间: 2025-12-26 01:00:58
+# 更新时间: 2026-01-02 01:02:33
 # 来源:
 # - https://github.com/Womsxd/MyAdBlockRules
 # - https://github.com/4fuu/AdGuard-Home-PCDN
@@ -183,4 +183,6 @@
 # Update time：2025-12-13
 # Star me：https://github.com/743859910/OpenHosts
 # Update url：https://raw.githubusercontent.com/743859910/OpenHosts/master/Block_PCDN_Domain.txt
+
+# Update time：2025-12-31
 
