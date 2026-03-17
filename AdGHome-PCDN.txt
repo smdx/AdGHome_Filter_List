@@ -1,9 +1,10 @@
 # PCDN Filter List
 # 合并自多个来源
-# 更新时间: 2026-03-13 01:14:33
+# 更新时间: 2026-03-17 02:54:31
 # 来源:
 # - https://github.com/Womsxd/MyAdBlockRules
 # - https://github.com/4fuu/AdGuard-Home-PCDN
+# - https://github.com/daboq11/ban-pcdn
 # - https://github.com/743859910/OpenHosts
 # - https://github.com/susetao/PCDNFilter-CHN-
 # - https://github.com/thhbdd/Block-pcdn-domains
@@ -184,4 +185,46 @@
 # Star me：https://github.com/743859910/OpenHosts
 # Update url：https://raw.githubusercontent.com/743859910/OpenHosts/master/Block_PCDN_Domain.txt
 # Update time：2025-12-31
+
+#垃圾小红书
+||log2.cmpassport.com^
+||ad.xiaohongshu.com^
+||ads-img-al.xhscdn.com^
+||ads-img-qc.xhscdn.com^
+||ads-video-al.xhscdn.com^
+||ads-video-qc.xhscdn.com^
+||ads-vp5.xhscdn.com^
+||ads-*.xhscdn.com^
+||growth-img.xhscdn.com^
+||sns-webpic.xhscdn.com^
+||xhslive-video.xhscnd.com^
+@@||ci.xiaohongshu.com^
+@@||edith.xiaohongshu.com^
+@@||miniprogram.xiaohongshu.com^
+@@||pages.xiaohongshu.com^
+@@||picasso-static.xiaohongshu.com^
+@@||rec.xiaohongshu.com^
+@@||so.xiaohongshu.com^
+@@||live-room.xiaohongshu.com^
+||*.xiaohongshu.com^
+||*.redbascket.com^
+#b站禁止pcdn, 
+||*pcdn*.biliapi.net^
+||*.mcdn.bilivideo.cn^
+||*.edge.mountaintoys.cn^
+||cn-*.bilivideo.com^
+||hcdn.video.qq.com
+||pcdn.video.qq.com
+||vodlive.qq.com
+||iwan-s.video.qq.com
+||gdt.qq.com
+||cm.l.qq.com
+# 腾讯qq
+||dldir.qq.com
+||dldir6.qq.com
+||pull-hs-f5-hot.flive.douyincdn.com
+# 屏蔽电信xx 此applecsb.crm.189.cn^ 域名如果常见，投诉运营商。
+||applecsb.crm.189.cn^
+||182.43.124.6^
+||shfzzx.cn^
 
