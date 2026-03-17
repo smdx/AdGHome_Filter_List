@@ -66,6 +66,7 @@ def process_filter_lists():
     urls = [
         "https://raw.githubusercontent.com/Womsxd/MyAdBlockRules/refs/heads/master/p2pcdnblock.txt",
         "https://raw.githubusercontent.com/4fuu/AdGuard-Home-PCDN/refs/heads/main/ban.txt",
+        "https://raw.githubusercontent.com/daboq11/ban-pcdn/refs/heads/main/Ban-pcdn.txt",
         "https://raw.githubusercontent.com/743859910/OpenHosts/refs/heads/master/Block_PCDN_Domain.txt",
         "https://cdn.jsdelivr.net/gh/susetao/PCDNFilter-CHN-@main/PCDNFilter.txt",
         "https://thhbdd.github.io/Block-pcdn-domains/ban.txt"
@@ -84,6 +85,7 @@ def process_filter_lists():
 # 来源:
 # - https://github.com/Womsxd/MyAdBlockRules
 # - https://github.com/4fuu/AdGuard-Home-PCDN
+# - https://github.com/daboq11/ban-pcdn
 # - https://github.com/743859910/OpenHosts
 # - https://github.com/susetao/PCDNFilter-CHN-
 # - https://github.com/thhbdd/Block-pcdn-domains
