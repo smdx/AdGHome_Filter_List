@@ -111,9 +111,12 @@
 @@||mp.weixin.qq.com^
 @@||wximg.wxs.qq.com^$important
 @@||dns.weixin.qq.com.cn^$important
-@@||img*.qq.com^$image,video@@||short.weixin.qq.com^$important
-@@||v.qq.com^$video@@||voip.weixin.qq.com^$important
-@@||game.qq.com^@@||long.weixin.qq.com^$important
+@@||img*.qq.com^$image,video
+@@||short.weixin.qq.com^$important
+@@||v.qq.com^$video
+@@||voip.weixin.qq.com^$important
+@@||game.qq.com^
+@@||long.weixin.qq.com^$important
 @@||*-download.ftn.qq.com^$important
 @@||img*.gtimg.com^$image,video
 @@||pay.weixin.qq.com^
