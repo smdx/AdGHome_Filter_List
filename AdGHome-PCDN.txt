@@ -1,6 +1,6 @@
 # PCDN Filter List
 # 合并自多个来源
-# 更新时间: 2026-08-28 08:01:55
+# 更新时间: 2026-09-03 02:39:08
 # 来源:
 # - https://github.com/Womsxd/MyAdBlockRules
 # - https://github.com/4fuu/AdGuard-Home-PCDN
@@ -9,10 +9,9 @@
 # - https://github.com/susetao/PCDNFilter-CHN-
 # - https://github.com/thhbdd/Block-pcdn-domains
 #
-# 注意：手动添加的规则请放在文件末尾的"自定义规则"部分
+# 注意：手动添加的规则请放在文件的"自定义规则"部分
 #
-
-# === 自定义规则 ===
+### 自定义规则 ###
 /.*pcdn.*\.(com|net|cn)$/
 /.*cdn.*p2p.*\.(com|net|cn)$/
 /.*pcdn.*youku\.com$/
@@ -226,4 +225,22 @@
 ||applecsb.crm.189.cn^
 ||182.43.124.6^
 ||shfzzx.cn^
+
+### 合并规则 ###
+||81.69.192.254^
+||159.75.113.64^
+||82.156.104.30^
+||139.155.176.138^
+||42.192.67.56^
+||159.75.138.193^
+||82.156.104.41^
+||139.155.7.96^
+||[2402:4e00:1401:cd03:0:9824:892b:3332]^
+||[2402:4e00:1401:cd03:0:9824:888e:36c2]^
+||douyinliving.com^
+||flive.douyincdn.com^
+||pull-flv-l1.douyincdn.com^
+||pull-stream.douyinliving.com^
+/^.*-pcdn-.*\.douyincdn\.com$/
+/^.*p2p.*\.douyincdn\.com$/
 
