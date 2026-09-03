@@ -1,6 +1,6 @@
 # PCDN Filter List
 # 合并自多个来源
-# 更新时间: 2026-09-03 02:40:46
+# 更新时间: 2026-09-03 02:51:20
 # 来源:
 # - https://github.com/Womsxd/MyAdBlockRules
 # - https://github.com/4fuu/AdGuard-Home-PCDN
@@ -16,7 +16,49 @@
 ||applecsb.crm.189.cn^
 ||182.43.124.6^
 ||shfzzx.cn^
+
 ### 合并规则 ###
+! 拦截一些p2pcdn的相关规则
+! 主要是防止自己成为p2p cdn的节点为主
+! 腾讯
+# 上面两个的cname解析结果
+# 疑似腾讯云stun服务器
+! 快手
+# 疑似p2p cdn文件
+# xxpkg系 疑似快手关联公司
+! 斗鱼
+!虎牙
+! 芒果tv
+! 56网/搜狐视频
+! 星域云/网心
+!bilibili
+!金山云
+# China PCDN 域名列表
+# 斗鱼
+# bilibili
+# 优酷
+# 爱奇艺
+# 芒果tv
+# 喜马拉雅
+# 快手
+# 腾讯
+# 抖音/字节
+# TCL
+# 第三方 PCDN 服务商
+#垃圾小红书
+#b站禁止pcdn
+# B 站 PCDN Tracker IP
+# 腾讯qq
+# 屏蔽电信xx 此applecsb.crm.189.cn^ 域名如果常见，投诉运营商。
+# Block_PCDN_Domain
+# Update time：2025-12-31
+# Star me：https://github.com/743859910/OpenHosts
+# Update url：https://raw.githubusercontent.com/743859910/OpenHosts/master/Block_PCDN_Domain.txt
+# Block_PCDN_Domain End
+# Merged and deduplicated AdGuard Home filter rules
+# From SophiEZzz and anti-AD
+# 正则表达式，AdGuard Home 
+
 @@||ci.xiaohongshu.com^
 @@||edith.xiaohongshu.com^
 @@||miniprogram.xiaohongshu.com^
@@ -140,6 +182,9 @@
 ||pull-stream.douyinliving.com^
 /^.*-pcdn-.*\.douyincdn\.com$/
 /^.*p2p.*\.douyincdn\.com$/
+||applecsb.crm.189.cn^
+||182.43.124.6^
+||shfzzx.cn^
 ||p2p.huya.com^
 ||stun.douyucdn.cn
 ||stun.hitv.com
