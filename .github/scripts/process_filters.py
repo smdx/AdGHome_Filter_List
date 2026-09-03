@@ -15,54 +15,55 @@ def download_url(url):
         return ""
 
 def is_comment_line(line):
-    """检查是否是注释行"""
+    """检查是否是注释行（AdGuard 规则中的 # 或 ! 开头）"""
     line = line.strip()
     return line.startswith('#') or line.startswith('!') or not line
 
 def normalize_line(line):
-    """标准化行以便去重比较"""
+    """标准化行以便去重比较（去除多余空格）"""
     line = line.strip()
     if is_comment_line(line):
         return line
-    # 对于规则行，去除多余空格进行标准化
     return re.sub(r'\s+', ' ', line)
 
 def read_existing_file():
-    """读取现有的AdGHome-PCDN.txt文件内容"""
+    """
+    读取现有的 AdGHome-PCDN.txt 文件，提取自定义规则部分的内容。
+    支持旧标记 "# === 自定义规则 ===" 和新标记 "### 自定义规则 ###"。
+    返回自定义部分的所有行（不含标题行，含注释和空行）。
+    """
     existing_file = "AdGHome-PCDN.txt"
-    existing_lines = []
-    
     try:
-        if Path(existing_file).exists():
-            with open(existing_file, 'r', encoding='utf-8') as f:
-                existing_lines = f.readlines()
-            print(f"Read {len(existing_lines)} lines from existing file")
-            
-            # 提取原有的自定义内容（非自动生成的头部分）
-            custom_lines = []
-            in_header = True
-            for line in existing_lines:
-                line = line.rstrip('\r\n')
-                # 检测是否还在文件头部分（包含更新时间信息的部分）
-                if line.startswith('# 更新时间:') or line.startswith('# 合并自多个来源'):
-                    in_header = True
-                elif line.startswith('#') and in_header:
-                    continue  # 跳过原有的头注释
-                elif line.strip() == "# === 自定义规则 ===":
-                    continue  # 跳过自定义规则标记行
-                else:
-                    in_header = False
-                    if line.strip():  # 只保留非空行
-                        custom_lines.append(line)
-            
-            return custom_lines
-    except Exception as e:
-        print(f"Error reading existing file: {e}")
+        with open(existing_file, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+    except FileNotFoundError:
+        return []
+
+    custom_lines = []
+    in_custom = False
+    custom_markers = ["# === 自定义规则 ===", "### 自定义规则 ###"]
+    end_markers = ["### 合并规则 ###", "# === 合并规则 ==="]  # 可能存在的结束标记
+
+    for line in lines:
+        stripped = line.strip()
+        if not in_custom:
+            if stripped in custom_markers:
+                in_custom = True
+            continue
+        else:
+            # 遇到结束标记则停止收集
+            if stripped in end_markers:
+                break
+            # 保留原始行（包括空行和注释）
+            custom_lines.append(line.rstrip('\r\n'))
     
-    return []
+    # 去除末尾多余的空行
+    while custom_lines and not custom_lines[-1].strip():
+        custom_lines.pop()
+    return custom_lines
 
 def process_filter_lists():
-    """处理过滤器列表"""
+    """主处理函数"""
     urls = [
         "https://raw.githubusercontent.com/Womsxd/MyAdBlockRules/refs/heads/master/p2pcdnblock.txt",
         "https://raw.githubusercontent.com/4fuu/AdGuard-Home-PCDN/refs/heads/main/ban.txt",
@@ -71,14 +72,14 @@ def process_filter_lists():
         "https://cdn.jsdelivr.net/gh/susetao/PCDNFilter-CHN-@main/PCDNFilter.txt",
         "https://thhbdd.github.io/Block-pcdn-domains/ban.txt"
     ]
-    
-    # 读取原有的自定义内容
-    existing_custom_lines = read_existing_file()
-    
-    all_lines = []
-    seen_lines = set()
-    
-    # 添加文件头注释
+
+    # 读取现有自定义内容
+    custom_lines = read_existing_file()
+
+    all_lines = []      # 最终输出的所有行
+    seen = set()        # 用于全局去重（只对规则行，不影响注释和标题）
+
+    # ---------- 文件头 ----------
     header = f"""# PCDN Filter List
 # 合并自多个来源
 # 更新时间: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
@@ -90,77 +91,78 @@ def process_filter_lists():
 # - https://github.com/susetao/PCDNFilter-CHN-
 # - https://github.com/thhbdd/Block-pcdn-domains
 #
-# 注意：手动添加的规则请放在文件末尾的"自定义规则"部分
+# 注意：手动添加的规则请放在文件的"自定义规则"部分
 #
 """
-    all_lines.extend(header.split('\n'))
     for line in header.split('\n'):
-        seen_lines.add(normalize_line(line))
-    
-    # 首先添加原有的自定义内容（确保它们在最前面）
-    print("Adding existing custom rules...")
-    custom_section_added = False
-    
-    for line in existing_custom_lines:
-        normalized = normalize_line(line)
-        if normalized and normalized not in seen_lines:
-            if not custom_section_added:
-                all_lines.append("# === 自定义规则 ===")
-                custom_section_added = True
-                seen_lines.add("# === 自定义规则 ===")  # 将标记行也加入已见集合
+        if line.strip():
             all_lines.append(line)
-            seen_lines.add(normalized)
-    
-    if custom_section_added:
-        all_lines.append("")  # 添加空行分隔
-    
-    # 处理每个URL
-    for i, url in enumerate(urls):
-        print(f"Processing URL {i+1}: {url}")
+            seen.add(normalize_line(line))  # 头部注释也加入 seen 以防意外重复（实际不会）
+
+    # ---------- 自定义规则 ----------
+    if custom_lines:
+        all_lines.append("### 自定义规则 ###")
+        seen.add("### 自定义规则 ###")
+        for line in custom_lines:
+            all_lines.append(line)
+            # 如果行是规则（非注释、非空），则加入 seen 以便合并时去重
+            stripped = line.strip()
+            if stripped and not stripped.startswith('#') and not stripped.startswith('!'):
+                seen.add(normalize_line(line))
+        all_lines.append("")  # 与后续区块分隔
+
+    # ---------- 合并规则（从网络下载） ----------
+    raw_merged = []  # 暂存所有合并规则（未排序）
+    for url in urls:
+        print(f"Processing URL: {url}")
         content = download_url(url)
         if not content:
             continue
-
-        # 记录这个URL是否有有效内容
-        url_has_content = False
-        
-        # 处理内容行
         for line in content.split('\n'):
             original_line = line.rstrip('\r\n')
-            normalized = normalize_line(original_line)
-            
-            # 空行处理
-            if not normalized:
+            norm = normalize_line(original_line)
+            # 跳过空行或注释行（这些不需要去重，也不加入 seen）
+            if not norm or is_comment_line(original_line):
                 continue
-                
-            # 检查是否已存在
-            if normalized not in seen_lines:
-                all_lines.append(original_line)
-                seen_lines.add(normalized)
-                url_has_content = True
-        
-        # 如果这个URL有有效内容，并且在后面还有URL，则添加一个空行
-        if url_has_content and i < len(urls) - 1:
-            all_lines.append("")
-    
-    # 写入文件
+            # 如果规则尚未出现过（包括自定义部分已有），则加入暂存列表并标记已见
+            if norm not in seen:
+                raw_merged.append(original_line)
+                seen.add(norm)
+
+    # 对合并规则排序：@@ 白名单规则放在最前面
+    allowed = []
+    blocked = []
+    for rule in raw_merged:
+        if rule.startswith('@@'):
+            allowed.append(rule)
+        else:
+            blocked.append(rule)
+    merged_final = allowed + blocked
+
+    if merged_final:
+        all_lines.append("### 合并规则 ###")
+        seen.add("### 合并规则 ###")
+        for rule in merged_final:
+            all_lines.append(rule)
+        all_lines.append("")  # 结尾空行
+
+    # ---------- 写入文件 ----------
     output_file = "AdGHome-PCDN.txt"
     with open(output_file, 'w', encoding='utf-8') as f:
-        # 重新组织内容，确保连续空行被合并
-        previous_line_empty = False
+        # 合并连续空行，保持文件整洁
+        previous_empty = False
         for line in all_lines:
-            current_line_empty = not line.strip()
-            
-            if current_line_empty:
-                if not previous_line_empty:
+            current_empty = not line.strip()
+            if current_empty:
+                if not previous_empty:
                     f.write('\n')
-                previous_line_empty = True
+                previous_empty = True
             else:
                 f.write(line + '\n')
-                previous_line_empty = False
-    
+                previous_empty = False
+
     print(f"Successfully processed and saved to {output_file}")
-    total_rules = len([l for l in all_lines if l.strip() and not l.startswith('#')])
+    total_rules = len([l for l in all_lines if l.strip() and not l.startswith('#') and not l.startswith('!') and not l.startswith('###')])
     print(f"Total unique rules: {total_rules}")
 
 if __name__ == "__main__":
