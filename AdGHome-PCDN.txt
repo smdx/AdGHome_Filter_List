@@ -11,6 +11,11 @@
 #
 # 注意：手动添加的规则请放在文件的"自定义规则"部分
 #
+### 自定义规则 ###
+# 屏蔽电信xx 此applecsb.crm.189.cn^ 域名如果常见，投诉运营商。
+||applecsb.crm.189.cn^
+||182.43.124.6^
+||shfzzx.cn^
 ### 合并规则 ###
 @@||ci.xiaohongshu.com^
 @@||edith.xiaohongshu.com^
@@ -135,9 +140,6 @@
 ||pull-stream.douyinliving.com^
 /^.*-pcdn-.*\.douyincdn\.com$/
 /^.*p2p.*\.douyincdn\.com$/
-||applecsb.crm.189.cn^
-||182.43.124.6^
-||shfzzx.cn^
 ||p2p.huya.com^
 ||stun.douyucdn.cn
 ||stun.hitv.com
