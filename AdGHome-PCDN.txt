@@ -1,6 +1,6 @@
 # PCDN Filter List
 # 合并自多个来源
-# 更新时间: 2026-09-03 02:58:45
+# 更新时间: 2026-09-03 02:59:40
 # 来源:
 # - https://github.com/Womsxd/MyAdBlockRules
 # - https://github.com/4fuu/AdGuard-Home-PCDN
@@ -18,47 +18,6 @@
 ||shfzzx.cn^
 
 ### 合并规则 ###
-! 拦截一些p2pcdn的相关规则
-! 主要是防止自己成为p2p cdn的节点为主
-! 腾讯
-# 上面两个的cname解析结果
-# 疑似腾讯云stun服务器
-! 快手
-# 疑似p2p cdn文件
-# xxpkg系 疑似快手关联公司
-! 斗鱼
-!虎牙
-! 芒果tv
-! 56网/搜狐视频
-! 星域云/网心
-!bilibili
-!金山云
-# China PCDN 域名列表
-# 斗鱼
-# bilibili
-# 优酷
-# 爱奇艺
-# 芒果tv
-# 喜马拉雅
-# 快手
-# 腾讯
-# 抖音/字节
-# TCL
-# 第三方 PCDN 服务商
-#垃圾小红书
-#b站禁止pcdn
-# B 站 PCDN Tracker IP
-# 腾讯qq
-# 屏蔽电信xx 此applecsb.crm.189.cn^ 域名如果常见，投诉运营商。
-# Block_PCDN_Domain
-# Update time：2025-12-31
-# Star me：https://github.com/743859910/OpenHosts
-# Update url：https://raw.githubusercontent.com/743859910/OpenHosts/master/Block_PCDN_Domain.txt
-# Block_PCDN_Domain End
-# Merged and deduplicated AdGuard Home filter rules
-# From SophiEZzz and anti-AD
-# 正则表达式，AdGuard Home 
-
 @@||ci.xiaohongshu.com^
 @@||edith.xiaohongshu.com^
 @@||miniprogram.xiaohongshu.com^
@@ -67,25 +26,35 @@
 @@||rec.xiaohongshu.com^
 @@||so.xiaohongshu.com^
 @@||live-room.xiaohongshu.com^
+
+! 拦截一些p2pcdn的相关规则
+! 主要是防止自己成为p2p cdn的节点为主
+! 腾讯
 ||stun.qqlive.qq.com^
 ||musicstun.p2p.qq.com^
 ||p2p.qq.com^
 ||*.p2ptun.qq.com^
 ||p2pupdate.gamedl.qq.com^
 ||p2pupgrade.gamedl.qq.com^
+# 上面两个的cname解析结果
 ||stun-a1.qq.com^
+# 疑似腾讯云stun服务器
 ||signal.qvb.qcloud.com^
 ||stun*.qvb.qcloud.com^
+! 快手
 /^(.+)-p2p-pull\.(video|live)-voip\.com$/
 /^(.+)-p2p\.pull\.yximgs\.com$/
 /^(.+)-p2p-(.+)\.pull\.yximgs\.com$/
 ||*.pcdn.yximgs.com^
 ||config-p2p-*.vcloud.ks-live.com^
 ||slb-p2p.vcloud.ks-live.com^
+# 疑似p2p cdn文件
 ||yximgs-webrtc.liveplay.myqcloud.com^
+# xxpkg系 疑似快手关联公司
 ||*pcdn*.xxpkg.com^
 ||p2p-punch.xxpkg.com^
 ||p2p-punch-*.xxpkg.com^
+! 斗鱼
 ||p2plog.douyucdn.cn^
 ||p2perrorlog.douyucdn.cn^
 ||p2pchunk-table.douyucdn.cn^
@@ -98,18 +67,26 @@
 ||p2pchunk-*.douyucdn.cn^
 ||p2pable-*.douyucdn.cn^
 ||dyp2p-*.douyucdn2.cn^
+!虎牙
 ||*.p2p.huya.com^
+! 芒果tv
 ||stun.hitv.com^
+! 56网/搜狐视频
 ||p2p.tracker.tv.sohu.com^
+! 星域云/网心
 ||conf-darwin.xycdn.com^
 ||seeds*-darwin.xycdn.com^
 ||seeds-open.xycdn.com^
 ||ttxyajs.data.kuiniuca.com^
 ||sd-gl.xycdn.com^
+!bilibili
 ||*-pcdn-*.biliapi.net^
 ||stun*.chat.bilibili.com^
 ||*-p2p-*.chat.bilibili.com^
+!金山云
 ||*.stun.yfp2p.net^
+# China PCDN 域名列表
+# 斗鱼
 ||stun.douyucdn.cn^
 ||stun1.douyucdn.cn^
 ||dyp2p-ali.douyucdn.cn^
@@ -118,15 +95,25 @@
 ||p2plive-ali.douyucdn.cn^
 ||p2plive-ws.douyucdn.cn^
 ||p2pvod-ws.douyucdn.cn^
+# bilibili
 ||mcdn.bilivideo.cn^
 ||mcdn.bilivideo.com^
+# 优酷
 /^pis(?:-[^-]+)?-pcdn\.youku\.com$/
+# 爱奇艺
 ||tpa-hcdn.iqiyi.com^
+# 芒果tv
+# 喜马拉雅
 ||pcdn.xmcdn.com^
+# 快手
 ||pcdn.yximgs.com^
+# 腾讯
 ||p2ptun.qq.com^
+# 抖音/字节
 ||hypercachenode.com^
+# TCL
 ||pis-cnc-pcdn.cp31.ott.cibntv.net^
+# 第三方 PCDN 服务商
 ||ksyungslb.com^
 ||gjfzpt.cn^
 ||szbdyd.com^
@@ -139,6 +126,7 @@
 ||kuiniuca.com^
 ||onethingpcs.com^
 ||jomodns.cn^
+#垃圾小红书
 ||log2.cmpassport.com^
 ||ad.xiaohongshu.com^
 ||ads-img-al.xhscdn.com^
@@ -152,10 +140,12 @@
 ||xhslive-video.xhscnd.com^
 ||*.xiaohongshu.com^
 ||*.redbascket.com^
+#b站禁止pcdn
 ||*pcdn*.biliapi.net^
 ||*.mcdn.bilivideo.cn^
 ||*.edge.mountaintoys.cn^
 ||cn-*.bilivideo.com^
+# B 站 PCDN Tracker IP
 ||81.69.192.254^
 ||159.75.113.64^
 ||82.156.104.30^
@@ -173,6 +163,7 @@
 ||iwan-s.video.qq.com
 ||gdt.qq.com
 ||cm.l.qq.com
+# 腾讯qq
 ||dldir.qq.com
 ||dldir6.qq.com
 ||pull-hs-f5-hot.flive.douyincdn.com
@@ -182,9 +173,11 @@
 ||pull-stream.douyinliving.com^
 /^.*-pcdn-.*\.douyincdn\.com$/
 /^.*p2p.*\.douyincdn\.com$/
+# 屏蔽电信xx 此applecsb.crm.189.cn^ 域名如果常见，投诉运营商。
 ||applecsb.crm.189.cn^
 ||182.43.124.6^
 ||shfzzx.cn^
+# Block_PCDN_Domain
 ||p2p.huya.com^
 ||stun.douyucdn.cn
 ||stun.hitv.com
@@ -196,6 +189,13 @@
 /.*pcdn.*biliapi.net/
 /.*pcdn.*youku.com/
 ||pcdn.yximgs.com
+# Update time：2025-12-31
+# Star me：https://github.com/743859910/OpenHosts
+# Update url：https://raw.githubusercontent.com/743859910/OpenHosts/master/Block_PCDN_Domain.txt
+# Block_PCDN_Domain End
+# Merged and deduplicated AdGuard Home filter rules
+# From SophiEZzz and anti-AD
+# 正则表达式，AdGuard Home 
 /^.*pcdn.*biliapi\.net^
 /^.*pcdn.*youku\.com^
 /^.*p2p.*douyucdn\.cn^
