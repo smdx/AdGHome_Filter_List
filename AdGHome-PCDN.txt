@@ -1,6 +1,6 @@
 # PCDN Filter List
 # 合并自多个来源
-# 更新时间: 2026-09-25 02:34:46
+# 更新时间: 2026-10-02 03:12:04
 # 来源:
 # - https://github.com/Womsxd/MyAdBlockRules
 # - https://github.com/4fuu/AdGuard-Home-PCDN
@@ -33,6 +33,7 @@
 ||stun.qqlive.qq.com^
 ||musicstun.p2p.qq.com^
 ||p2p.qq.com^
+||p2ptun.qq.com^
 ||*.p2ptun.qq.com^
 ||p2pupdate.gamedl.qq.com^
 ||p2pupgrade.gamedl.qq.com^
@@ -41,6 +42,18 @@
 # 疑似腾讯云stun服务器
 ||signal.qvb.qcloud.com^
 ||stun*.qvb.qcloud.com^
+# 腾讯云
+# apd-vodp2plogin.teg.tencent-cloud.net（P2P 登录）、apd-vodp2pnat.teg.tencent-cloud.net（NAT）、apd-pcdnvodstat.teg.tencent-cloud.net（PCDN 统计上报）
+||apd-*.teg.tencent-cloud.net^
+!百度/小度
+||pcdn-query.baidu.com^
+||dcdn.baidu.com^
+||puncher.xiaodu.com^
+# stun相关域名
+# STUN/ICE（NAT 穿透）
+#    ice-stunserver.xdrtc.com / ice-stunserver-v6.xdrtc.com
+#    icestatis.xdrtc.com / iceudpstat.xdrtc.com / hbiceapi.xdrtc.com
+||xdrtc.com^ 
 ! 快手
 /^(.+)-p2p-pull\.(video|live)-voip\.com$/
 /^(.+)-p2p\.pull\.yximgs\.com$/
@@ -79,12 +92,30 @@
 ||seeds-open.xycdn.com^
 ||ttxyajs.data.kuiniuca.com^
 ||sd-gl.xycdn.com^
+||starrydyn.com^
+||sd-glsky.xycdn.com^
+||comfylink.com^
+||kuiniuca.com^
 !bilibili
 ||*-pcdn-*.biliapi.net^
 ||stun*.chat.bilibili.com^
 ||*-p2p-*.chat.bilibili.com^
 !金山云
 ||*.stun.yfp2p.net^
+||pcth-cdn.ksyun.com^
+||td.ksyun.com^
+!七牛云
+||*.gslb.ubeethiesemo.com^
+||log.qiniuapi.com^
+!蓝山云
+! https://hub.docker.com/layers/shilazi/lsycloud-iaas/d2.2.10/images/sha256-92d6c6a185f243e6f8bc8421d7c3bc0db6a434c435241ce39ef029243c47cf7f?tab=layers
+! https://hub.docker.com/r/lsycloud/iaas-arm64
+||hnzkclouds.com^
+! 抖音
+# 支持屏蔽vod和live的PCDN，需要和百度+网心的一起拦截
+||ndcpp.com^
+!爱奇艺
+||tpa-hcdn.iqiyi.com^
 # China PCDN 域名列表
 # 斗鱼
 ||stun.douyucdn.cn^
@@ -101,14 +132,12 @@
 # 优酷
 /^pis(?:-[^-]+)?-pcdn\.youku\.com$/
 # 爱奇艺
-||tpa-hcdn.iqiyi.com^
 # 芒果tv
 # 喜马拉雅
 ||pcdn.xmcdn.com^
 # 快手
 ||pcdn.yximgs.com^
 # 腾讯
-||p2ptun.qq.com^
 # 抖音/字节
 ||hypercachenode.com^
 # TCL
@@ -123,7 +152,6 @@
 ||uhabo.com^
 ||xycdn.com^
 ||xinqiucc.com^
-||kuiniuca.com^
 ||onethingpcs.com^
 ||jomodns.cn^
 #垃圾小红书
