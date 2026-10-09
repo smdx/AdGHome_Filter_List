@@ -1,6 +1,6 @@
 # PCDN Filter List
 # 合并自多个来源
-# 更新时间: 2026-10-02 03:12:04
+# 更新时间: 2026-10-09 03:44:00
 # 来源:
 # - https://github.com/Womsxd/MyAdBlockRules
 # - https://github.com/4fuu/AdGuard-Home-PCDN
@@ -180,9 +180,6 @@
 ||iwan-s.video.qq.com
 ||gdt.qq.com
 ||cm.l.qq.com
-# 腾讯qq
-||dldir.qq.com
-||dldir6.qq.com
 ||pull-hs-f5-hot.flive.douyincdn.com
 ||douyinliving.com^
 ||flive.douyincdn.com^
